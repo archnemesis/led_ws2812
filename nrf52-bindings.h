@@ -10,8 +10,10 @@
 /*
  * At 7 MHz, 1 bit is ~142 ns, so 3 bits is ~426 ns.
  */
-#define SPI_FREQ    7000000
-#define ZERO_FRAME  0x60
-#define ONE_FRAME   0x7E
+#define SPI_FREQ    4000000
+#define ZERO_FRAME  0x40
+#define ONE_FRAME   0x70
+
+#define STRING_LEN  54
 
 #endif

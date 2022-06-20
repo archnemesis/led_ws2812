@@ -6,6 +6,12 @@
                             0x80, 0x4F, 0xC1, 0x9F, \
                             0xA8, 0x64, 0x36, 0xBD
 
+/* 150cbd33-9647-4efb-a5f6-193b1d31315e */
+#define RGBLED_COLORS_UUID  0x5e, 0x31, 0x31, 0x1d, \
+                            0x3b, 0x19, 0xf6, 0xa5, \
+                            0xfb, 0x4e, 0x47, 0x96, \
+                            0x33, 0xbd, 0x0c, 0x15
+
 /* 7226b7ea-5636-4479-9fe6-5c845ba91b81 */
 #define RGBLED_COMMAND_UUID 0x81, 0x1B, 0xA9, 0x5B, \
                             0x84, 0x5C, 0xE6, 0x9F, \
@@ -18,6 +24,7 @@
                             0x2E, 0x4A, 0x4B, 0x6E, \
                             0x4C, 0x90, 0x00, 0x3D
 
-#define BT_UUID_RGBLED      BT_UUID_DECLARE_128(RGBLED_SERVICE_UUID)
-#define BT_UUID_RGBLED_CMD  BT_UUID_DECLARE_128(RGBLED_COMMAND_UUID)
-#define BT_UUID_RGBLED_DATA BT_UUID_DECLARE_128(RGBLED_DATA_UUID)
+#define BT_UUID_RGBLED          BT_UUID_DECLARE_128(RGBLED_SERVICE_UUID)
+#define BT_UUID_RGBLED_CMD      BT_UUID_DECLARE_128(RGBLED_COMMAND_UUID)
+#define BT_UUID_RGBLED_COLORS   BT_UUID_DECLARE_128(RGBLED_COLORS_UUID)
+#define BT_UUID_RGBLED_DATA     BT_UUID_DECLARE_128(RGBLED_DATA_UUID)

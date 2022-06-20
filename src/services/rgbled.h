@@ -6,5 +6,7 @@
 int rgbled_init(void);
 int rgbled_update(void);
 int rgbled_num_pixels();
+void rgbled_set_color(int index, struct led_rgb color);
 void rgbled_set_pixels(struct led_rgb color);
 void rgbled_set_pixel(int pixel, struct led_rgb color);
+void rgbled_set_pattern(int pattern);

@@ -32,12 +32,12 @@ LOG_MODULE_REGISTER(main);
 #include <sys/util.h>
 
 #include "services/rbgled_service.h"
-#include "rgbled.h"
+#include "services/rgbled.h"
 
 #define DEVICE_NAME             CONFIG_BT_DEVICE_NAME
 #define DEVICE_NAME_LEN         (sizeof(DEVICE_NAME) - 1)
 
-#define DELAY_TIME K_MSEC(5)
+#define DELAY_TIME K_MSEC(1000)
 
 static const uint8_t bms_auth_code[] = {'A', 'B', 'C', 'D'};
 
@@ -177,7 +177,6 @@ static int bms_init(void)
  */
 void main(void)
 {
-	int i = 0;
 	int err;
 
 	err = rgbled_init();
@@ -232,32 +231,6 @@ void main(void)
 	LOG_INF("Displaying pattern on strip");
 
 	while (1) {
-		rgbled_set_pixels((struct led_rgb)RGB(0, 0, 0));
-
-		for (; i < 255; i++) {
-			for (int j = 0; j < rgbled_num_pixels(); j++) {
-				rgbled_set_pixel(j, (struct led_rgb)RGB(0, 0, i));
-			}
-
-			err = rgbled_update();
-			if (err) {
-				LOG_ERR("couldn't update strip: %d", err);
-			}
-
-			k_sleep(DELAY_TIME);
-		}
-
-		for (; i > 0; i--) {
-			for (int j = 0; j < rgbled_num_pixels(); j++) {
-				rgbled_set_pixel(j, (struct led_rgb)RGB(0, 0, i));
-			}
-
-			err = rgbled_update();
-			if (err) {
-				LOG_ERR("couldn't update strip: %d", err);
-			}
-
-			k_sleep(DELAY_TIME);
-		}
+		k_sleep(DELAY_TIME);
 	}
 }
